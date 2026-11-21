@@ -1,11 +1,23 @@
 ## Commands
 commands.utilities_vein_miner.settings_panel=Abre o painel de configurações do Utilities Vein Miner.
+commands.utilities_vein_miner.preset=Aplica um conjunto pronto de configurações (miner, builder, lumberjack, off).
+commands.utilities_vein_miner.world_limit=Define o limite de Tamanho Máximo do mundo (0 remove).
+commands.utilities_vein_miner.world_default=Define a função inicial de quem não tem configurações salvas.
+commands.utilities_vein_miner.stats=Imprime um resumo das suas configurações do Vein Miner.
+commands.utilities_vein_miner.world_status=Imprime o limite de Tamanho Máximo e a função padrão do mundo.
 
 ## Entity
 entity.utilities_vein_miner:selected_block.name=Bloco Selecionado
 
 ## UI
 ui.utilities_vein_miner:config.title=Vein Miner
+ui.utilities_vein_miner:config.on=Ativo
+ui.utilities_vein_miner:config.off=Inativo
+ui.utilities_vein_miner:config.back=Voltar
+ui.utilities_vein_miner:config.done=Concluído
+ui.utilities_vein_miner:config.more=Mais Configurações
+ui.utilities_vein_miner:config.reset=Restaurar Padrões
+ui.utilities_vein_miner:config.turn_off_short=Desativar Após
 ui.utilities_vein_miner:config.show_selection=Mostrar Bordas
 ui.utilities_vein_miner:config.show_when_sneaking=Mostrar Bordas Quando Agachado
 
@@ -30,6 +42,9 @@ ui.utilities_vein_miner:config.turn_off.5_minute=5 Minutos
 ui.utilities_vein_miner:config.turn_off.10_minute=10 Minutos
 
 ui.utilities_vein_miner:config.advanced=Configurações Avançadas
+ui.utilities_vein_miner:config.section.mining=Mineração
+ui.utilities_vein_miner:config.section.appearance=Aparência
+ui.utilities_vein_miner:config.section.advanced=Avançado
 ui.utilities_vein_miner:config.show_info=Mostrar Info
 ui.utilities_vein_miner:config.show_info.tooltip=Mostra a quantia de blocos que serão quebrados ou foram quebrados
 ui.utilities_vein_miner:config.max_size=Máximo de Blocos
@@ -41,22 +56,55 @@ ui.utilities_vein_miner:config.only_log=Ativar Somente em Troncos
 ui.utilities_vein_miner:config.accuracy=Precisão das Bordas
 ui.utilities_vein_miner:config.cancel_open_item=Não Abrir Painel Com Picareta
 ui.utilities_vein_miner:config.connected_diagonals=Diagonais Conectadas
+ui.utilities_vein_miner:config.activation=Ativação
+ui.utilities_vein_miner:config.activation.sneak=Agachado
+ui.utilities_vein_miner:config.activation.always=Sempre
+ui.utilities_vein_miner:config.require_sneak=Exigir Agachar
+ui.utilities_vein_miner:config.marked_tools_only=Somente Ferramentas Marcadas
+ui.utilities_vein_miner:config.mark_tool=Marcar Ferramenta na Mão
+ui.utilities_vein_miner:config.marked=Marcada
+ui.utilities_vein_miner:config.not_marked=Não Marcada
+ui.utilities_vein_miner:config.protect_tool=Proteger Minha Ferramenta
+ui.utilities_vein_miner:config.section.activation=Ativação
+ui.utilities_vein_miner:config.max_size.cap=Limitado pelo mundo: %1
+ui.utilities_vein_miner:config.never_mine=Nunca Minerar
+ui.utilities_vein_miner:config.never_mine.hint=Blocos intactos, mesmo dentro de um veio.
+ui.utilities_vein_miner:config.this_tool=Esta Ferramenta
+ui.utilities_vein_miner:config.tool_profile=Usar Perfis de Ferramenta
+ui.utilities_vein_miner:config.tool_profile.hint=Salva a função e o tamanho na ferramenta na mão. As outras mantêm os seus.
+ui.utilities_vein_miner:config.this_tool.function=Função:
+ui.utilities_vein_miner:config.this_tool.size=Tamanho máximo:
+ui.utilities_vein_miner:config.this_tool.none=não definido
+ui.utilities_vein_miner:config.this_tool.save=Salvar Minhas Configurações Nesta Ferramenta
+ui.utilities_vein_miner:config.this_tool.clear=Limpar o Perfil Desta Ferramenta
 ui.utilities_vein_miner:config.delete_blocks=Deletar Blocos
 ui.utilities_vein_miner:config.delete_blocks.list=Deletando: §7
+ui.utilities_vein_miner:config.delete_blocks.hint=Toque em um bloco para alternar. Blocos marcados são minerados sem drops.
 
 ui.utilities_vein_miner:config.quick_settings=Configurações Rapidas
 
-## Waring
+## Warning
 warning.utilities_vein_miner:config_complete=§aConfigurações Salvas.
-warning.utilities_vein_miner:config_canceled=§cConfigurações Desfeitas.
-warning.utilities_vein_miner:disabled_delete_blocks=§cDeletar Blocks Desativado.
+warning.utilities_vein_miner:config_reset=§aConfigurações Restauradas.
+warning.utilities_vein_miner:config_canceled=§7Painel de Configurações Fechado.
+warning.utilities_vein_miner:tool_guard=§cPicareta quase quebrada - mineração em veio parada.
+warning.utilities_vein_miner:tool_marked=§aMarcada: esta picareta é uma ferramenta do Vein Miner.
+warning.utilities_vein_miner:tool_unmarked=§7Marca da ferramenta removida.
+warning.utilities_vein_miner:tool_missing=§cSegure uma picareta primeiro.
+warning.utilities_vein_miner:tool_profile_saved=§aSalvo: esta ferramenta agora usa sua função e tamanho.
+warning.utilities_vein_miner:tool_profile_cleared=§7Perfil da ferramenta limpo, ela segue suas configurações novamente.
+warning.utilities_vein_miner:preset_applied=§aPredefinição aplicada.
+warning.utilities_vein_miner:stats=§7Função: §r%1§7 | Tamanho: §r%2§7 | Bordas: §r%3§7 | Desliga após: §r%4
+warning.utilities_vein_miner:stats_lists=§7Nunca minerar: §r%1§7 | Apagar blocos: §r%2§7 | Ativação: §r%3
+warning.utilities_vein_miner:stats_world=§7Limite do mundo: §r%1§7 | Função padrão: §r%2
+warning.utilities_vein_miner:world_limit=§aLimite de Tamanho Máximo do mundo: %1
+warning.utilities_vein_miner:world_limit_off=§7Limite de Tamanho Máximo do mundo removido.
+warning.utilities_vein_miner:world_default=§aNovos jogadores começam com: 
 warning.utilities_vein_miner:quick_setting=[§a!§r] Função atual do Vein Miner: 
 warning.utilities_vein_miner:quick_setting_enabled=[§c!§r]§c Configurações Rapidas não funcionam corretamente em celulares com a Gui Clássica.
 warning.utilities_vein_miner:will_break=%1 Blocos Selecionados
 warning.utilities_vein_miner:breaking=Quebrado %1 Blocos
 warning.utilities_vein_miner:turned_off=Vein Miner foi desativado por inatividade
 
-
-
-pack.description=xVoid Axell não escreveu a descrição.
-pack.name=Utils Vein Miner v5.5 RP
+pack.description=Adiciona mineração em veios, túneis e derrubada de árvores com um painel de configurações no jogo.
+pack.name=Utils Vein Miner v5.10 RP

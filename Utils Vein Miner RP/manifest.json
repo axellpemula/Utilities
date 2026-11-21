@@ -1,29 +1,22 @@
 {
   "format_version": 2,
   "header": {
-    "name": "Utils Vein Miner v5.5 RP",
+    "name": "Utils Vein Miner v5.10 RP",
     "description": "pack.description",
     "uuid": "ec762ec2-3b18-42b7-aeb6-0397a79e0804",
     "min_engine_version": [1, 21, 110],
-    "version": [5, 5, 0],
+    "version": [5, 10, 0],
     "pack_scope": "world"
   },
   "modules": [
     {
       "type": "resources",
       "uuid": "5f2f152b-384b-412d-865e-f38ac133e19f",
-      "version": [5, 5, 0]
+      "version": [5, 10, 0]
     }
   ],
   "metadata": {
     "product_type": "addon",
     "authors": ["xVoid_Axell"]
-  },
-  "capabilities" : ["pbr"],
-  "dependencies": [
-    {
-      "uuid": "ab9903bf-8635-481d-bc06-038e50121d76",
-      "version": [5, 5, 0]
-    }
-  ]
+  }
 }

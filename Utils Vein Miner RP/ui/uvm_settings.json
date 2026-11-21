@@ -1,0 +1,472 @@
+{
+  "namespace": "uvm_settings",
+
+  "pad": {
+    "type": "panel",
+    "$pad|default": [0, 0],
+    "size": "$pad"
+  },
+
+  "panel_bg": {
+    "type": "image",
+    "texture": "textures/ui/utilities_vein_miner/panel"
+  },
+  "title_bg": {
+    "type": "image",
+    "texture": "textures/ui/utilities_vein_miner/title"
+  },
+  "card_bg": {
+    "type": "image",
+    "texture": "textures/ui/utilities_vein_miner/card"
+  },
+  "rule": {
+    "type": "image",
+    "texture": "textures/ui/utilities_vein_miner/rule"
+  },
+  "scroll_handle": {
+    "type": "image",
+    "texture": "textures/ui/utilities_vein_miner/scroll_handle"
+  },
+  "scroll_track": {
+    "type": "image",
+    "texture": "textures/ui/utilities_vein_miner/scroll_track"
+  },
+
+  "title_text": {
+    "type": "label",
+    "text": "#text",
+    "color": [0.95, 0.78, 0.5],
+    "shadow": true,
+    "font_type": "MinecraftTen",
+    "size": ["default", "default"],
+    "max_size": ["100% - 42px", "100% - 4px"],
+    "anchor_from": "left_middle",
+    "anchor_to": "left_middle",
+    "offset": [30, 0],
+    "layer": 3,
+    "bindings": [
+      {
+        "binding_name": "#title_text"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#title_text - $uvm_panel_tag)",
+        "target_property_name": "#text"
+      }
+    ]
+  },
+
+  "close_face": {
+    "type": "panel",
+    "size": ["100%", "100%"],
+    "controls": [
+      {
+        "bg": {
+          "type": "image",
+          "texture": "$face_texture",
+          "size": ["100%", "100%"],
+          "layer": 1
+        }
+      },
+      {
+        "icon": {
+          "type": "image",
+          "texture": "textures/ui/utilities_vein_miner/close",
+          "size": [16, 16],
+          "layer": 2
+        }
+      }
+    ]
+  },
+  "close_button@common.button": {
+    "$pressed_button_name": "button.menu_exit",
+    "controls": [
+      {
+        "default@uvm_settings.close_face": {
+          "$face_texture": "textures/ui/utilities_vein_miner/row"
+        }
+      },
+      {
+        "hover@uvm_settings.close_face": {
+          "$face_texture": "textures/ui/utilities_vein_miner/row_hover"
+        }
+      },
+      {
+        "pressed@uvm_settings.close_face": {
+          "$face_texture": "textures/ui/utilities_vein_miner/row_pressed"
+        }
+      }
+    ]
+  },
+
+  "root": {
+    "type": "stack_panel",
+    "orientation": "vertical",
+    "size": [320, 226],
+    "max_size": [320, 226],
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "layer": 2,
+    "controls": [
+      {
+        "title_bar": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": ["100%", 30],
+          "controls": [
+            {
+              "title_plate@uvm_settings.title_bg": {
+                "size": ["fill", "100%"],
+                "controls": [
+                  {
+                    "emblem": {
+                      "type": "image",
+                      "texture": "textures/ui/utilities_vein_miner/pickaxe",
+                      "size": [16, 16],
+                      "anchor_from": "left_middle",
+                      "anchor_to": "left_middle",
+                      "offset": [7, 0],
+                      "layer": 3
+                    }
+                  },
+                  {
+                    "title_text@uvm_settings.title_text": {}
+                  }
+                ]
+              }
+            },
+            {
+              "title_gap@uvm_settings.pad": {
+                "$pad": [4, "100%"]
+              }
+            },
+            {
+              "close_slot": {
+                "type": "panel",
+                "size": [26, "100%"],
+                "controls": [
+                  {
+                    "close@uvm_settings.close_button": {
+                      "size": [24, 24]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "body_gap@uvm_settings.pad": {
+          "$pad": ["100%", 4]
+        }
+      },
+      {
+        "body@uvm_settings.panel_bg": {
+          "size": ["100%", "fill"],
+          "controls": [
+            {
+              "inner": {
+                "type": "panel",
+                "size": ["100% - 12px", "100% - 12px"],
+                "controls": [
+                  {
+                    "scroll@uvm_settings.scroll": {}
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "scroll@common.scrolling_panel": {
+    "size": ["100%", "100%"],
+    "$show_background": false,
+    "$scrolling_content": "uvm_settings.content",
+    "$scroll_box_touch_image_control": "uvm_settings.scroll_handle",
+    "$scroll_box_mouse_image_control": "uvm_settings.scroll_handle",
+    "$scroll_track_image_control": "uvm_settings.scroll_track",
+    "$scroll_size": [4, "100%"]
+  },
+
+  "content": {
+    "type": "stack_panel",
+    "orientation": "vertical",
+    "size": ["100% - 8px", "100%c"],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "controls": [
+      {
+        "wrapping_panel": {
+          "type": "panel",
+          "size": ["100%", "100%c"],
+          "controls": [
+            {
+              "rows@uvm_settings.rows": {}
+            }
+          ]
+        }
+      },
+      {
+        "end_gap@uvm_settings.pad": {
+          "$pad": ["100%", 2]
+        }
+      }
+    ]
+  },
+
+  "rows": {
+    "type": "stack_panel",
+    "orientation": "vertical",
+    "size": ["100%", "100%c"],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "factory": {
+      "name": "buttons",
+      "control_ids": {
+        "button": "@uvm_settings.row_button",
+        "label": "@uvm_settings.row_label",
+        "header": "@uvm_settings.row_header",
+        "divider": "@uvm_settings.row_divider"
+      }
+    },
+    "collection_name": "form_buttons",
+    "bindings": [
+      {
+        "binding_name": "#form_button_contents",
+        "binding_name_override": "#collection_length"
+      }
+    ]
+  },
+
+  "row_header": {
+    "type": "panel",
+    "size": ["100%", 22],
+    "controls": [
+      {
+        "text": {
+          "type": "label",
+          "text": "#form_button_text",
+          "color": [0.88, 0.6, 0.3],
+          "shadow": true,
+          "font_type": "MinecraftTen",
+          "size": ["100% - 12px", "default"],
+          "anchor_from": "bottom_left",
+          "anchor_to": "bottom_left",
+          "offset": [6, -4],
+          "layer": 2,
+          "bindings": [
+            {
+              "binding_name": "#form_button_text",
+              "binding_type": "collection",
+              "binding_collection_name": "form_buttons"
+            }
+          ]
+        }
+      },
+      {
+        "line@uvm_settings.rule": {
+          "size": ["100% - 8px", 1],
+          "anchor_from": "bottom_left",
+          "anchor_to": "bottom_left",
+          "offset": [4, -2],
+          "layer": 2
+        }
+      }
+    ]
+  },
+
+  "row_label": {
+    "type": "panel",
+    "size": ["100%", "100%c + 6px"],
+    "controls": [
+      {
+        "card@uvm_settings.card_bg": {
+          "size": ["100%", "100%c + 10px"],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "layer": 1,
+          "controls": [
+            {
+              "text": {
+                "type": "label",
+                "text": "#form_button_text",
+                "size": ["100% - 14px", "default"],
+                "color": [0.69, 0.77, 0.85],
+                "layer": 2,
+                "bindings": [
+                  {
+                    "binding_name": "#form_button_text",
+                    "binding_type": "collection",
+                    "binding_collection_name": "form_buttons"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "row_divider": {
+    "type": "panel",
+    "size": ["100%", 9],
+    "controls": [
+      {
+        "line@uvm_settings.rule": {
+          "size": ["100% - 14px", 1],
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "layer": 2
+        }
+      }
+    ]
+  },
+
+  "row_face": {
+    "type": "panel",
+    "size": ["100%", "100%"],
+    "controls": [
+      {
+        "bg": {
+          "type": "image",
+          "texture": "$face_texture",
+          "size": ["100%", "100%"],
+          "layer": 1
+        }
+      },
+      {
+        "text": {
+          "type": "label",
+          "text": "#form_button_text",
+          "size": ["100% - 34px", "default"],
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "offset": [9, 0],
+          "color": [0.91, 0.94, 0.97],
+          "shadow": true,
+          "layer": 3,
+          "bindings": [
+            {
+              "binding_name": "#form_button_text",
+              "binding_type": "collection",
+              "binding_collection_name": "form_buttons"
+            }
+          ]
+        }
+      },
+      {
+        "chevron": {
+          "type": "image",
+          "texture": "textures/ui/utilities_vein_miner/chevron",
+          "size": [6, 10],
+          "anchor_from": "right_middle",
+          "anchor_to": "right_middle",
+          "offset": [-9, 0],
+          "layer": 3,
+          "bindings": [
+            {
+              "binding_name": "#form_button_text",
+              "binding_type": "collection",
+              "binding_collection_name": "form_buttons"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "((#form_button_text - $uvm_row_on) = #form_button_text) and ((#form_button_text - $uvm_row_off) = #form_button_text)",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "toggle_on": {
+          "type": "image",
+          "texture": "textures/ui/utilities_vein_miner/toggle_on",
+          "size": [20, 11],
+          "anchor_from": "right_middle",
+          "anchor_to": "right_middle",
+          "offset": [-8, 0],
+          "layer": 3,
+          "bindings": [
+            {
+              "binding_name": "#form_button_text",
+              "binding_type": "collection",
+              "binding_collection_name": "form_buttons"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(not ((#form_button_text - $uvm_row_on) = #form_button_text))",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "toggle_off": {
+          "type": "image",
+          "texture": "textures/ui/utilities_vein_miner/toggle_off",
+          "size": [20, 11],
+          "anchor_from": "right_middle",
+          "anchor_to": "right_middle",
+          "offset": [-8, 0],
+          "layer": 3,
+          "bindings": [
+            {
+              "binding_name": "#form_button_text",
+              "binding_type": "collection",
+              "binding_collection_name": "form_buttons"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(not ((#form_button_text - $uvm_row_off) = #form_button_text))",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "row_button": {
+    "type": "panel",
+    "size": ["100%", 27],
+    "controls": [
+      {
+        "button@common.button": {
+          "size": ["100%", 24],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [0, 1],
+          "$pressed_button_name": "button.form_button_click",
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "form_buttons"
+            }
+          ],
+          "controls": [
+            {
+              "default@uvm_settings.row_face": {
+                "$face_texture": "textures/ui/utilities_vein_miner/row"
+              }
+            },
+            {
+              "hover@uvm_settings.row_face": {
+                "$face_texture": "textures/ui/utilities_vein_miner/row_hover"
+              }
+            },
+            {
+              "pressed@uvm_settings.row_face": {
+                "$face_texture": "textures/ui/utilities_vein_miner/row_pressed"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

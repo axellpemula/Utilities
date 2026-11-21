@@ -1,11 +1,23 @@
 ## Commands
 commands.utilities_vein_miner.settings_panel=Open the Utilities Vein Miner settings panel.
+commands.utilities_vein_miner.preset=Apply a ready made settings bundle (miner, builder, lumberjack, off).
+commands.utilities_vein_miner.world_limit=Set the world wide Max Size cap (0 removes it).
+commands.utilities_vein_miner.world_default=Set the function players without saved settings start with.
+commands.utilities_vein_miner.stats=Print a summary of your Vein Miner settings.
+commands.utilities_vein_miner.world_status=Print the world Max Size cap and default function.
 
 ## Entity
 entity.utilities_vein_miner:selected_block.name=Selected Block
 
 ## UI
 ui.utilities_vein_miner:config.title=Vein Miner
+ui.utilities_vein_miner:config.on=ON
+ui.utilities_vein_miner:config.off=OFF
+ui.utilities_vein_miner:config.back=Back
+ui.utilities_vein_miner:config.done=Done
+ui.utilities_vein_miner:config.more=More Settings
+ui.utilities_vein_miner:config.reset=Reset to Defaults
+ui.utilities_vein_miner:config.turn_off_short=Turn Off After
 ui.utilities_vein_miner:config.show_selection=Show Edge
 ui.utilities_vein_miner:config.show_when_sneaking=Show Edge When Sneaking
 
@@ -30,6 +42,9 @@ ui.utilities_vein_miner:config.turn_off.5_minute=5 Minutes
 ui.utilities_vein_miner:config.turn_off.10_minute=10 Minutes
 
 ui.utilities_vein_miner:config.advanced=Advanced Settings
+ui.utilities_vein_miner:config.section.mining=Mining
+ui.utilities_vein_miner:config.section.appearance=Appearance
+ui.utilities_vein_miner:config.section.advanced=Advanced
 ui.utilities_vein_miner:config.show_info=Show Action Bar Info
 ui.utilities_vein_miner:config.show_info.tooltip=Show how many block will be broken or have been broken
 ui.utilities_vein_miner:config.max_size=Max Size
@@ -41,22 +56,55 @@ ui.utilities_vein_miner:config.only_log=Enable Only in Log
 ui.utilities_vein_miner:config.accuracy=Edges Accuracy
 ui.utilities_vein_miner:config.cancel_open_item=No Open Panel With Pickaxe
 ui.utilities_vein_miner:config.connected_diagonals=Connected Diagonals
+ui.utilities_vein_miner:config.activation=Activation
+ui.utilities_vein_miner:config.activation.sneak=Sneak
+ui.utilities_vein_miner:config.activation.always=Always
+ui.utilities_vein_miner:config.require_sneak=Require Sneaking
+ui.utilities_vein_miner:config.marked_tools_only=Only Marked Tools
+ui.utilities_vein_miner:config.mark_tool=Mark Held Tool
+ui.utilities_vein_miner:config.marked=Marked
+ui.utilities_vein_miner:config.not_marked=Not Marked
+ui.utilities_vein_miner:config.protect_tool=Protect My Tool
+ui.utilities_vein_miner:config.section.activation=Activation
+ui.utilities_vein_miner:config.max_size.cap=Capped by the world: %1
+ui.utilities_vein_miner:config.never_mine=Never Mine
+ui.utilities_vein_miner:config.never_mine.hint=Blocks left untouched, even inside a vein.
+ui.utilities_vein_miner:config.this_tool=This Tool
+ui.utilities_vein_miner:config.tool_profile=Use Tool Profiles
+ui.utilities_vein_miner:config.tool_profile.hint=Save the function and size on the held tool. Other tools keep their own.
+ui.utilities_vein_miner:config.this_tool.function=Function:
+ui.utilities_vein_miner:config.this_tool.size=Max size:
+ui.utilities_vein_miner:config.this_tool.none=not set
+ui.utilities_vein_miner:config.this_tool.save=Save My Settings To This Tool
+ui.utilities_vein_miner:config.this_tool.clear=Clear This Tool's Profile
 ui.utilities_vein_miner:config.delete_blocks=Delete Blocks
 ui.utilities_vein_miner:config.delete_blocks.list=Deleting: §7
+ui.utilities_vein_miner:config.delete_blocks.hint=Tap a block to toggle it. Blocks set to delete are mined without drops.
 
 ui.utilities_vein_miner:config.quick_settings=Quick Settings
 
-## Waring
+## Warning
 warning.utilities_vein_miner:config_complete=§aSettings Saved.
-warning.utilities_vein_miner:config_canceled=§cSettings Undone.
-warning.utilities_vein_miner:disabled_delete_blocks=§cDisabled Delete Block.
+warning.utilities_vein_miner:config_reset=§aSettings Restored.
+warning.utilities_vein_miner:config_canceled=§7Settings Panel Closed.
+warning.utilities_vein_miner:tool_guard=§cPickaxe almost broken - vein mining stopped.
+warning.utilities_vein_miner:tool_marked=§aMarked: this pickaxe is a Vein Miner tool.
+warning.utilities_vein_miner:tool_unmarked=§7Tool mark removed.
+warning.utilities_vein_miner:tool_missing=§cHold a pickaxe first.
+warning.utilities_vein_miner:tool_profile_saved=§aSaved: this tool now uses your function and size.
+warning.utilities_vein_miner:tool_profile_cleared=§7Tool profile cleared, it follows your settings again.
+warning.utilities_vein_miner:preset_applied=§aPreset applied.
+warning.utilities_vein_miner:stats=§7Function: §r%1§7 | Size: §r%2§7 | Edges: §r%3§7 | Off after: §r%4
+warning.utilities_vein_miner:stats_lists=§7Never mine: §r%1§7 | Delete blocks: §r%2§7 | Activation: §r%3
+warning.utilities_vein_miner:stats_world=§7World cap: §r%1§7 | Default function: §r%2
+warning.utilities_vein_miner:world_limit=§aWorld Max Size cap: %1
+warning.utilities_vein_miner:world_limit_off=§7World Max Size cap removed.
+warning.utilities_vein_miner:world_default=§aNew players start with: 
 warning.utilities_vein_miner:quick_setting=[§a!§r] Current Vein Miner Function: 
 warning.utilities_vein_miner:quick_setting_enabled=[§c!§r]§c Quick Settings doesn't work properly on phones with Classic Gui.
 warning.utilities_vein_miner:will_break=%1 Blocks Selected
 warning.utilities_vein_miner:breaking=Broken %1 Blocks
 warning.utilities_vein_miner:turned_off=Vein Miner was deactivated due to inactivity
 
-
-
-pack.description=xVoid Axell don't write descriptions.
-pack.name=Utils Vein Miner v5.5 RP
+pack.description=Adds vein miner, tunnel miner and tree feller tools with an in-game settings panel.
+pack.name=Utils Vein Miner v5.10 RP

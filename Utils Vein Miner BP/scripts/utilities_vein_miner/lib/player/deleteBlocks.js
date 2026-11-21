@@ -1,20 +1,14 @@
-export const apiDeleteBlocks = new class ApiDeleteBlocks {
-    constructor() {
-        this.allBlocks = ["minecraft:stone", "minecraft:dirt", "minecraft:gravel", "minecraft:deepslate", "minecraft:andesite", "minecraft:diorite", "minecraft:granite", "minecraft:tuff"];
-    }
-    get(player) {
-        const dynamic = player.getDynamicProperty("utilities_vein_miner:delete_blocks");
-        if (typeof dynamic != "string")
-            return new Set();
-        const array = JSON.parse(dynamic);
-        if (this.isValid(array))
-            return new Set(array);
-        return new Set(this.allBlocks);
-    }
-    set(player, value) {
-        player.setDynamicProperty("utilities_vein_miner:delete_blocks", JSON.stringify(value));
-    }
-    isValid(arr) {
-        return arr.every(value => typeof value === "string");
-    }
-};
+import { BlockList, buildBlockChoices } from "./blockList";
+
+/**
+ * Blocks offered in the "Delete Blocks" panel, best first.
+ * Derived from `worksOnlyOres` so the list can no longer drift away from the
+ * blocks the vein miner actually accepts (it used to hardcode 8 of 28).
+ */
+const DELETE_PRIORITY = ["stone", "deepslate", "andesite", "diorite", "granite", "tuff", "dirt", "gravel", "netherrack"];
+
+/** Blocks that are mined without dropping loot, to keep inventories clean. */
+export const apiDeleteBlocks = new BlockList(
+    "utilities_vein_miner:delete_blocks",
+    buildBlockChoices(DELETE_PRIORITY)
+);

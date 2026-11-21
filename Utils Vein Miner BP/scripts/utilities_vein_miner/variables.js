@@ -1,18 +1,13 @@
-export const Variables = {
-    maxSize: 1024,
-    maxTunnel: 16,
-    maxTunnelMedium: 16,
-    maxMiningTunnel: 16,
-    maxEscapingTunnel: 16
-};
-export const defaultFaceDirection = [
-    { x: 0, y: 0, z: -1 },
-    { x: 1, y: 0, z: 0 },
-    { x: 0, y: 0, z: 1 },
-    { x: -1, y: 0, z: 0 },
-    { x: 0, y: 1, z: 0 },
-    { x: 0, y: -1, z: 0 },
-];
+/**
+ * Block id lists used by the vein miner.
+ *
+ * Limits that used to live here have moved:
+ *  - `maxSize`/`edgeSize` slider bounds -> `lib/player/options.js`
+ *  - `defaultFaceDirection`             -> `lib/block/directions.js`
+ * `maxTunnel`, `maxTunnelMedium`, `maxMiningTunnel` and `maxEscapingTunnel`
+ * were never referenced and have been removed.
+ */
+
 const leaves = [
     "minecraft:acacia_leaves",
     "minecraft:azalea_leaves",
@@ -26,6 +21,7 @@ const leaves = [
     "minecraft:pale_oak_leaves",
     "minecraft:spruce_leaves"
 ];
+
 export const canDropNone = new Set([
     ...leaves,
     "minecraft:short_grass",
@@ -40,6 +36,7 @@ export const canDropNone = new Set([
     "minecraft:sculk_vein",
     "minecraft:calibrated_sculk_sensor"
 ]);
+
 export const autoEnableAll = [
     "minecraft:ancient_debris",
     "minecraft:coal_ore",
@@ -64,6 +61,7 @@ export const autoEnableAll = [
     "minecraft:red_sand",
     "minecraft:sand"
 ];
+
 export const worksOnlyOres = new Set([
     "minecraft:ancient_debris",
     "minecraft:coal_ore",
@@ -94,6 +92,7 @@ export const worksOnlyOres = new Set([
     "minecraft:tuff",
     "minecraft:netherrack"
 ]);
+
 export const worksOnlyLogs = new Set([
     "minecraft:oak_wood",
     "minecraft:oak_log",
@@ -144,6 +143,7 @@ export const worksOnlyLogs = new Set([
     "minecraft:stripped_warped_hyphae",
     "minecraft:stripped_warped_stem"
 ]);
+
 export const blocksWithExperience = {
     "minecraft:coal_ore": [0, 2],
     "minecraft:deepslate_coal_ore": [0, 2],
