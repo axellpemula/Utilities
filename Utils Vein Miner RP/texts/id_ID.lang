@@ -1,0 +1,110 @@
+## Commands
+commands.utilities_vein_miner.settings_panel=Buka panel pengaturan Utilities Vein Miner.
+commands.utilities_vein_miner.preset=Terapkan paket pengaturan siap pakai (miner, builder, lumberjack, off).
+commands.utilities_vein_miner.world_limit=Tetapkan batas Ukuran Maksimum untuk seluruh dunia (0 untuk menghapus).
+commands.utilities_vein_miner.world_default=Tetapkan fungsi awal bagi pemain yang belum punya pengaturan tersimpan.
+commands.utilities_vein_miner.stats=Tampilkan ringkasan pengaturan Vein Miner milikmu.
+commands.utilities_vein_miner.world_status=Tampilkan batas dan fungsi bawaan dunia.
+
+## Entity
+entity.utilities_vein_miner:selected_block.name=Blok Terpilih
+
+## UI
+ui.utilities_vein_miner:config.title=Vein Miner
+ui.utilities_vein_miner:config.on=AKTIF
+ui.utilities_vein_miner:config.off=NONAKTIF
+ui.utilities_vein_miner:config.back=Kembali
+ui.utilities_vein_miner:config.done=Selesai
+ui.utilities_vein_miner:config.more=Pengaturan Lainnya
+ui.utilities_vein_miner:config.reset=Kembalikan ke Awal
+ui.utilities_vein_miner:config.turn_off_short=Matikan Setelah
+ui.utilities_vein_miner:config.show_selection=Tampilkan Garis Tepi
+ui.utilities_vein_miner:config.show_when_sneaking=Tampilkan Garis Saat Menunduk
+
+ui.utilities_vein_miner:config.function_type=Fungsi
+ui.utilities_vein_miner:config.function_type.off=Nonaktif
+ui.utilities_vein_miner:config.function_type.all=Semua
+ui.utilities_vein_miner:config.function_type.1x1_tunnel=Terowongan 1x1
+ui.utilities_vein_miner:config.function_type.1x2_tunnel=Terowongan 1x2
+ui.utilities_vein_miner:config.function_type.1x3_tunnel=Terowongan 1x3
+ui.utilities_vein_miner:config.function_type.3x2_tunnel=Terowongan 3x2
+ui.utilities_vein_miner:config.function_type.3x2_tunnel_small=Terowongan 3x2 Kecil
+ui.utilities_vein_miner:config.function_type.3x3_tunnel=Terowongan 3x3
+ui.utilities_vein_miner:config.function_type.3x3_tunnel_small=Terowongan 3x3 Kecil
+ui.utilities_vein_miner:config.function_type.mining_tunnel=Terowongan Tambang
+ui.utilities_vein_miner:config.function_type.escape_tunnel=Terowongan Kabur
+
+ui.utilities_vein_miner:config.turn_off=Matikan setelah tidak dipakai selama:
+ui.utilities_vein_miner:config.turn_off.no=Jangan Matikan
+ui.utilities_vein_miner:config.turn_off.1_minute=1 Menit
+ui.utilities_vein_miner:config.turn_off.2_minute=2 Menit
+ui.utilities_vein_miner:config.turn_off.5_minute=5 Menit
+ui.utilities_vein_miner:config.turn_off.10_minute=10 Menit
+
+ui.utilities_vein_miner:config.advanced=Pengaturan Lanjutan
+ui.utilities_vein_miner:config.section.mining=Penambangan
+ui.utilities_vein_miner:config.section.appearance=Tampilan
+ui.utilities_vein_miner:config.section.advanced=Lanjutan
+ui.utilities_vein_miner:config.show_info=Tampilkan Info Action Bar
+ui.utilities_vein_miner:config.show_info.tooltip=Tampilkan berapa blok yang akan atau sudah dihancurkan
+ui.utilities_vein_miner:config.max_size=Ukuran Maksimum
+ui.utilities_vein_miner:config.thick_edges=Ketebalan Garis
+ui.utilities_vein_miner:config.cancel_no_drop=Batalkan Jika Tanpa Drop
+ui.utilities_vein_miner:config.auto_all=Fungsi "Semua" Otomatis
+ui.utilities_vein_miner:config.only_ore=Hanya Aktif di Bijih
+ui.utilities_vein_miner:config.only_log=Hanya Aktif di Batang Kayu
+ui.utilities_vein_miner:config.accuracy=Akurasi Garis
+ui.utilities_vein_miner:config.cancel_open_item=Tidak Membuka Panel Dengan Beliung
+ui.utilities_vein_miner:config.connected_diagonals=Diagonal Terhubung
+ui.utilities_vein_miner:config.activation=Aktivasi
+ui.utilities_vein_miner:config.activation.sneak=Menunduk
+ui.utilities_vein_miner:config.activation.always=Selalu
+ui.utilities_vein_miner:config.require_sneak=Wajib Menunduk
+ui.utilities_vein_miner:config.marked_tools_only=Hanya Alat Bertanda
+ui.utilities_vein_miner:config.mark_tool=Tandai Alat di Tangan
+ui.utilities_vein_miner:config.marked=Bertanda
+ui.utilities_vein_miner:config.not_marked=Belum Bertanda
+ui.utilities_vein_miner:config.protect_tool=Lindungi Alat Saya
+ui.utilities_vein_miner:config.section.activation=Aktivasi
+ui.utilities_vein_miner:config.max_size.cap=Dibatasi oleh dunia: %1
+ui.utilities_vein_miner:config.never_mine=Jangan Tambang
+ui.utilities_vein_miner:config.never_mine.hint=Blok yang dibiarkan utuh, bahkan di dalam urat bijih.
+ui.utilities_vein_miner:config.this_tool=Alat Ini
+ui.utilities_vein_miner:config.tool_profile=Gunakan Profil Alat
+ui.utilities_vein_miner:config.tool_profile.hint=Simpan fungsi dan ukuran pada alat di tangan. Alat lain tetap memakai miliknya.
+ui.utilities_vein_miner:config.this_tool.function=Fungsi:
+ui.utilities_vein_miner:config.this_tool.size=Ukuran maksimum:
+ui.utilities_vein_miner:config.this_tool.none=belum diatur
+ui.utilities_vein_miner:config.this_tool.save=Simpan Pengaturan Saya ke Alat Ini
+ui.utilities_vein_miner:config.this_tool.clear=Hapus Profil Alat Ini
+ui.utilities_vein_miner:config.delete_blocks=Hapus Blok
+ui.utilities_vein_miner:config.delete_blocks.list=Menghapus: §7
+ui.utilities_vein_miner:config.delete_blocks.hint=Ketuk blok untuk mengubah. Blok yang dihapus tidak menghasilkan drop.
+
+ui.utilities_vein_miner:config.quick_settings=Pengaturan Cepat
+
+## Warning
+warning.utilities_vein_miner:config_complete=§aPengaturan Disimpan.
+warning.utilities_vein_miner:config_reset=§aPengaturan Dikembalikan.
+warning.utilities_vein_miner:config_canceled=§7Panel Pengaturan Ditutup.
+warning.utilities_vein_miner:tool_guard=§cBeliung hampir rusak - penambangan urat dihentikan.
+warning.utilities_vein_miner:tool_marked=§aDitandai: beliung ini adalah alat Vein Miner.
+warning.utilities_vein_miner:tool_unmarked=§7Tanda alat dihapus.
+warning.utilities_vein_miner:tool_missing=§cPegang beliung terlebih dahulu.
+warning.utilities_vein_miner:tool_profile_saved=§aTersimpan: alat ini kini memakai fungsi dan ukuranmu.
+warning.utilities_vein_miner:tool_profile_cleared=§7Profil alat dihapus, kembali mengikuti pengaturanmu.
+warning.utilities_vein_miner:preset_applied=§aPreset diterapkan.
+warning.utilities_vein_miner:world_limit=§aBatas Ukuran Maksimum dunia: %1
+warning.utilities_vein_miner:world_limit_off=§7Batas Ukuran Maksimum dunia dihapus.
+warning.utilities_vein_miner:world_default=§aPemain baru memulai dengan: 
+warning.utilities_vein_miner:quick_setting=[§a!§r] Fungsi Vein Miner saat ini: 
+warning.utilities_vein_miner:quick_setting_enabled=[§c!§r]§c Pengaturan Cepat tidak bekerja baik di ponsel dengan Classic GUI.
+warning.utilities_vein_miner:will_break=%1 Blok Dipilih
+warning.utilities_vein_miner:breaking=%1 Blok Dihancurkan
+warning.utilities_vein_miner:turned_off=Vein Miner dinonaktifkan karena tidak dipakai
+warning.utilities_vein_miner:stats=§7Fungsi: §r%1§7 | Ukuran: §r%2§7 | Garis: §r%3§7 | Mati: §r%4
+warning.utilities_vein_miner:stats_lists=§7Jangan tambang: §r%1§7 | Hapus blok: §r%2§7 | Aktivasi: §r%3
+warning.utilities_vein_miner:stats_world=§7Batas dunia: §r%1§7 | Bawaan: §r%2
+
+pack.description=Menambahkan penambang urat, penambang terowongan, dan penebang pohon dengan panel pengaturan di dalam game.
+pack.name=Utils Vein Miner v5.10 RP

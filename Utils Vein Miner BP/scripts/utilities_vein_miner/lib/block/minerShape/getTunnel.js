@@ -1,85 +1,62 @@
-import { functionController } from "../../../functions/controller";
-import { getOffsetType } from "../selectArea";
 import { system } from "@minecraft/server";
-import { defaultFaceDirection } from "../../../variables";
+import { functionController } from "../../../functions/controller";
+import { DEFAULT_FACE_DIRECTIONS, isInsideTunnel, tunnelBounds, tunnelSpace } from "../directions";
 import { apiDurability } from "../../item/durability";
+import { positionKey } from "../../util/position";
 import { apiBlock } from "../apiBlock";
+import { getOffsetType } from "../offsets";
+
 export const veinShapeGetTunnel = new class VeinShapeGetTunnel {
+    /**
+     * @param {any} info
+     * @param {number} sideRange
+     * @param {number} heightRange
+     * @param {number} [depthRange] undefined = unlimited
+     */
     getBlocks(info, sideRange, heightRange, depthRange) {
         const { blockIds, blockFace, origin, item, config } = info;
-        const maxWidth = Math.floor(sideRange / 2);
-        const maxHeight = Math.floor(heightRange / 2);
-        const maxDepth = depthRange ? (depthRange - 1) : Infinity;
-        const is1x2 = heightRange == 2;
-        const faceDirection = apiBlock.getFaceDregress(blockFace);
-        const direction = defaultFaceDirection[faceDirection];
-        if (direction == undefined)
-            return;
-        const isVertical = direction.y != 0;
-        const durability = apiDurability.getDurability(item, true);
-        const maxSize = durability == Infinity || durability > config.maxSize ? config.maxSize : durability;
-        if (maxSize < 1)
-            return;
+        const bounds = tunnelBounds(sideRange, heightRange, depthRange);
+        const direction = DEFAULT_FACE_DIRECTIONS[apiBlock.getFaceDirectionIndex(blockFace)];
+        if (!direction) return;
+        const isVertical = direction.y !== 0;
+
+        const durability = apiDurability.getDurability(item, true, config?.protectTool ? 1 : 0);
+        const maxSize = durability === Infinity || durability > config.maxSize ? config.maxSize : durability;
+        if (maxSize < 1) return;
+
         const preOffsets = getOffsetType(info);
-        const aproved = [];
-        const testing = [origin.location];
-        const visited = new Set();
-        let realIndex = 0;
-        visited.add((origin.x << 20) ^ (origin.y << 10) ^ origin.z);
+        const approved = [];
+        const queue = [{ x: origin.x, y: origin.y, z: origin.z }];
+        const visited = new Set([positionKey(origin.x, origin.y, origin.z)]);
+        let index = 0;
+
         system.runJob(function* BFS() {
-            while (realIndex < testing.length) {
-                const center = testing[realIndex++];
-                if (!center)
-                    continue;
-                const distanceX = center.x - origin.x;
-                const distanceY = center.y - origin.y;
-                const distanceZ = center.z - origin.z;
-                let currentDepth = 0;
-                let currentSideA = 0;
-                let currentSideB = 0;
-                if (isVertical) {
-                    currentDepth = distanceY * direction.y;
-                    currentSideA = distanceX;
-                    currentSideB = distanceZ;
-                }
-                else {
-                    currentDepth = distanceX * direction.x + distanceZ * direction.z;
-                    currentSideA = distanceX * direction.z - distanceZ * direction.x;
-                    currentSideB = distanceY;
-                }
-                if (currentDepth < 0 || currentDepth > maxDepth)
-                    continue;
-                if (isVertical) {
-                    if (Math.abs(currentSideA) > maxWidth)
-                        continue;
-                    if (Math.abs(currentSideB) > maxWidth)
-                        continue;
-                }
-                else {
-                    if (Math.abs(currentSideA) > maxWidth)
-                        continue;
-                    if (Math.abs(currentSideB) > maxHeight || (is1x2 && currentSideB === 1))
-                        continue;
-                }
-                aproved.push(center);
-                for (const offset of preOffsets) {
-                    const offsetX = center.x + offset[0], offsetY = center.y + offset[1], offsetZ = center.z + offset[2];
-                    const offsetKey = (offsetX << 20) ^ (offsetY << 10) ^ offsetZ;
-                    if (visited.has(offsetKey))
-                        continue;
-                    visited.add(offsetKey);
-                    const block = origin.dimension.getBlock({ x: offsetX, y: offsetY, z: offsetZ });
-                    if (!block)
-                        continue;
-                    if (!blockIds.includes(block.typeId))
-                        continue;
-                    testing.push({ x: offsetX, y: offsetY, z: offsetZ });
-                    if (aproved.length >= maxSize)
-                        return functionController(info, aproved.slice(0, maxSize));
-                }
+            while (index < queue.length && approved.length < maxSize) {
+                const center = queue[index++];
                 yield;
+                if (!center) continue;
+                const space = tunnelSpace({
+                    x: center.x - origin.x,
+                    y: center.y - origin.y,
+                    z: center.z - origin.z
+                }, direction);
+                if (!isInsideTunnel(space, bounds, isVertical)) continue;
+                approved.push(center);
+                for (const offset of preOffsets) {
+                    if (approved.length >= maxSize) break;
+                    const x = center.x + offset[0];
+                    const y = center.y + offset[1];
+                    const z = center.z + offset[2];
+                    const key = positionKey(x, y, z);
+                    if (visited.has(key)) continue;
+                    visited.add(key);
+                    const block = origin.dimension.getBlock({ x, y, z });
+                    if (!block) continue;
+                    if (!blockIds.includes(block.typeId)) continue;
+                    queue.push({ x, y, z });
+                }
             }
-            functionController(info, aproved.slice(0, maxSize));
+            functionController(info, approved.slice(0, maxSize));
         }());
     }
 };

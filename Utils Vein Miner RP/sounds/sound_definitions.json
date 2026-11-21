@@ -1,7 +1,6 @@
 {
   "format_version" : "1.21.60",
   "sound_definitions" : {
-    // Warnings
     "utilities_vein_miner.warn.levelup": {
       "category": "warn",
       "max_distance": 8,

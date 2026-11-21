@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Build output (run `npm run build` to regenerate)
+dist/
+*.mcaddon
+*.mcpack
+*.mcworld
+
+# Editors / OS
+.DS_Store
+Thumbs.db
+.idea/
+*.swp

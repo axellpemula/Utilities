@@ -39,7 +39,6 @@
           "v.tw = false;"
         ],
         "pre_animation": [
-          // "!v." = Hasn't Block
           "v.visible_ne = ( (!v.north && !v.east) || (!v.north && v.east && v.ne) || (v.north && !v.east && v.ne) );",
           "v.visible_nw = ( (!v.north && !v.west) || (!v.north && v.west && v.nw) || (v.north && !v.west && v.nw) );",
           "v.visible_bn = ( (!v.north && !v.down) || (v.down && v.bn && !v.north) || (!v.down && v.bn && v.north) );",

@@ -1,0 +1,69 @@
+{
+  "namespace": "server_form",
+
+  "main_screen_content": {
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "size": "$uvm_form_area",
+    "min_size": ["100%", 190],
+    "$uvm_form_area|default": ["100%", "100%"],
+    "variables": [
+      {
+        "requires": "$touch",
+        "$uvm_form_area": ["100%", "100% - 24px"]
+      }
+    ],
+    "controls": [
+      {
+        "server_form_factory": {
+          "type": "factory",
+          "control_ids": {
+            "long_form": "@server_form.uvm_long_form",
+            "custom_form": "@server_form.custom_form"
+          }
+        }
+      }
+    ]
+  },
+
+  "uvm_long_form": {
+    "type": "panel",
+    "bindings": [
+      {
+        "binding_name": "#title_text"
+      }
+    ],
+    "controls": [
+      {
+        "uvm_panel@uvm_settings.root": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "uvm_long_form",
+              "source_property_name": "(not ((#title_text - $uvm_panel_tag) = #title_text))",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "vanilla_long_form": {
+          "type": "panel",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "uvm_long_form",
+              "source_property_name": "((#title_text - $uvm_panel_tag) = #title_text)",
+              "target_property_name": "#visible"
+            }
+          ],
+          "controls": [
+            {
+              "long_form@server_form.long_form": {}
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

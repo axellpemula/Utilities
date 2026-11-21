@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # No dependencies are required: the checks use node:test and node:zlib only.
+      # `npm test` also loads tests/support/register.mjs, which maps
+      # @minecraft/server to the mocks used by the integration tests.
+      - name: Validate packs
+        run: npm run validate
+      - name: Tests
+        run: npm test
+      - name: Build .mcaddon
+        run: npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mcaddon
+          path: dist/*.mcaddon
+          if-no-files-found: error
