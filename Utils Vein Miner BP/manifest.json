@@ -1,0 +1,42 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Utils Vein Miner v5.5 BP",
+    "description": "pack.description",
+    "uuid": "ab9903bf-8635-481d-bc06-038e50121d76",
+    "min_engine_version": [1, 21, 110],
+    "version": [5, 5, 0]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "6af34813-8e91-49b7-8b0c-97db3f365f69",
+      "version": [5, 5, 0]
+    },
+    {
+      "type": "script",
+      "language": "javascript",
+      "entry": "scripts/utilities_vein_miner/main.js",
+      "uuid": "ad97443d-97d9-4cab-a394-b109a5d89d8c",
+      "version": [5, 5, 0]
+    }
+  ],
+  "metadata": {
+    "product_type": "addon",
+    "authors": ["xVoid_Axell"]
+  },
+  "dependencies": [
+    {
+      "uuid": "ec762ec2-3b18-42b7-aeb6-0397a79e0804",
+      "version": [5, 5, 0]
+    },
+    {
+      "module_name": "@minecraft/server",
+      "version": "2.2.0"
+    },
+    {
+      "module_name": "@minecraft/server-ui",
+      "version": "2.0.0"
+    }
+  ]
+}

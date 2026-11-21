@@ -1,0 +1,62 @@
+## Commands
+commands.utilities_vein_miner.settings_panel=Open the Utilities Vein Miner settings panel.
+
+## Entity
+entity.utilities_vein_miner:selected_block.name=Selected Block
+
+## UI
+ui.utilities_vein_miner:config.title=Vein Miner
+ui.utilities_vein_miner:config.show_selection=Show Edge
+ui.utilities_vein_miner:config.show_when_sneaking=Show Edge When Sneaking
+
+ui.utilities_vein_miner:config.function_type=Function
+ui.utilities_vein_miner:config.function_type.off=Disabled
+ui.utilities_vein_miner:config.function_type.all=All
+ui.utilities_vein_miner:config.function_type.1x1_tunnel=1x1 Tunnel
+ui.utilities_vein_miner:config.function_type.1x2_tunnel=1x2 Tunnel
+ui.utilities_vein_miner:config.function_type.1x3_tunnel=1x3 Tunnel
+ui.utilities_vein_miner:config.function_type.3x2_tunnel=3x2 Tunnel
+ui.utilities_vein_miner:config.function_type.3x2_tunnel_small=3x2 Tunnel Small
+ui.utilities_vein_miner:config.function_type.3x3_tunnel=3x3 Tunnel
+ui.utilities_vein_miner:config.function_type.3x3_tunnel_small=3x3 Tunnel Small
+ui.utilities_vein_miner:config.function_type.mining_tunnel=Mining Tunnel
+ui.utilities_vein_miner:config.function_type.escape_tunnel=Escape Tunnel
+
+ui.utilities_vein_miner:config.turn_off=Turn off after not using for:
+ui.utilities_vein_miner:config.turn_off.no=Don't Turn Off
+ui.utilities_vein_miner:config.turn_off.1_minute=1 Minute
+ui.utilities_vein_miner:config.turn_off.2_minute=2 Minutes
+ui.utilities_vein_miner:config.turn_off.5_minute=5 Minutes
+ui.utilities_vein_miner:config.turn_off.10_minute=10 Minutes
+
+ui.utilities_vein_miner:config.advanced=Advanced Settings
+ui.utilities_vein_miner:config.show_info=Show Action Bar Info
+ui.utilities_vein_miner:config.show_info.tooltip=Show how many block will be broken or have been broken
+ui.utilities_vein_miner:config.max_size=Max Size
+ui.utilities_vein_miner:config.thick_edges=Thickness of Edges
+ui.utilities_vein_miner:config.cancel_no_drop=Cancel When no Drop
+ui.utilities_vein_miner:config.auto_all=Auto Function "All"
+ui.utilities_vein_miner:config.only_ore=Enable Only in Ore
+ui.utilities_vein_miner:config.only_log=Enable Only in Log
+ui.utilities_vein_miner:config.accuracy=Edges Accuracy
+ui.utilities_vein_miner:config.cancel_open_item=No Open Panel With Pickaxe
+ui.utilities_vein_miner:config.connected_diagonals=Connected Diagonals
+ui.utilities_vein_miner:config.delete_blocks=Delete Blocks
+ui.utilities_vein_miner:config.delete_blocks.list=Deleting: §7
+
+ui.utilities_vein_miner:config.quick_settings=Quick Settings
+
+## Waring
+warning.utilities_vein_miner:config_complete=§aSettings Saved.
+warning.utilities_vein_miner:config_canceled=§cSettings Undone.
+warning.utilities_vein_miner:disabled_delete_blocks=§cDisabled Delete Block.
+warning.utilities_vein_miner:quick_setting=[§a!§r] Current Vein Miner Function: 
+warning.utilities_vein_miner:quick_setting_enabled=[§c!§r]§c Quick Settings doesn't work properly on phones with Classic Gui.
+warning.utilities_vein_miner:will_break=%1 Blocks Selected
+warning.utilities_vein_miner:breaking=Broken %1 Blocks
+warning.utilities_vein_miner:turned_off=Vein Miner was deactivated due to inactivity
+
+
+
+pack.description=xVoid Axell don't write descriptions.
+pack.name=Utils Vein Miner v5.5 RP

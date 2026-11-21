@@ -1,0 +1,62 @@
+## Commands
+commands.utilities_vein_miner.settings_panel=Abre o painel de configurações do Utilities Vein Miner.
+
+## Entity
+entity.utilities_vein_miner:selected_block.name=Bloco Selecionado
+
+## UI
+ui.utilities_vein_miner:config.title=Vein Miner
+ui.utilities_vein_miner:config.show_selection=Mostrar Bordas
+ui.utilities_vein_miner:config.show_when_sneaking=Mostrar Bordas Quando Agachado
+
+ui.utilities_vein_miner:config.function_type=Funções
+ui.utilities_vein_miner:config.function_type.off=Desativado
+ui.utilities_vein_miner:config.function_type.all=Tudo
+ui.utilities_vein_miner:config.function_type.1x1_tunnel=Tunel 1x1
+ui.utilities_vein_miner:config.function_type.1x2_tunnel=Tunel 1x2
+ui.utilities_vein_miner:config.function_type.1x3_tunnel=Tunel 1x3
+ui.utilities_vein_miner:config.function_type.3x2_tunnel=Tunel 3x2
+ui.utilities_vein_miner:config.function_type.3x2_tunnel_small=Tunel 3x2 Pequeno
+ui.utilities_vein_miner:config.function_type.3x3_tunnel=Tunel 3x3
+ui.utilities_vein_miner:config.function_type.3x3_tunnel_small=Tunel 3x3 Pequeno
+ui.utilities_vein_miner:config.function_type.mining_tunnel=Tunel de Mineração
+ui.utilities_vein_miner:config.function_type.escape_tunnel=Tunel de Escape
+
+ui.utilities_vein_miner:config.turn_off=Desligar após não usar por:
+ui.utilities_vein_miner:config.turn_off.no=Não Desligar
+ui.utilities_vein_miner:config.turn_off.1_minute=1 Minuto
+ui.utilities_vein_miner:config.turn_off.2_minute=2 Minutos
+ui.utilities_vein_miner:config.turn_off.5_minute=5 Minutos
+ui.utilities_vein_miner:config.turn_off.10_minute=10 Minutos
+
+ui.utilities_vein_miner:config.advanced=Configurações Avançadas
+ui.utilities_vein_miner:config.show_info=Mostrar Info
+ui.utilities_vein_miner:config.show_info.tooltip=Mostra a quantia de blocos que serão quebrados ou foram quebrados
+ui.utilities_vein_miner:config.max_size=Máximo de Blocos
+ui.utilities_vein_miner:config.thick_edges=Espessura das Bordas
+ui.utilities_vein_miner:config.cancel_no_drop=Cancelar ao não Soltar Item
+ui.utilities_vein_miner:config.auto_all=Função "All" Automático
+ui.utilities_vein_miner:config.only_ore=Ativar Somente em Minério
+ui.utilities_vein_miner:config.only_log=Ativar Somente em Troncos
+ui.utilities_vein_miner:config.accuracy=Precisão das Bordas
+ui.utilities_vein_miner:config.cancel_open_item=Não Abrir Painel Com Picareta
+ui.utilities_vein_miner:config.connected_diagonals=Diagonais Conectadas
+ui.utilities_vein_miner:config.delete_blocks=Deletar Blocos
+ui.utilities_vein_miner:config.delete_blocks.list=Deletando: §7
+
+ui.utilities_vein_miner:config.quick_settings=Configurações Rapidas
+
+## Waring
+warning.utilities_vein_miner:config_complete=§aConfigurações Salvas.
+warning.utilities_vein_miner:config_canceled=§cConfigurações Desfeitas.
+warning.utilities_vein_miner:disabled_delete_blocks=§cDeletar Blocks Desativado.
+warning.utilities_vein_miner:quick_setting=[§a!§r] Função atual do Vein Miner: 
+warning.utilities_vein_miner:quick_setting_enabled=[§c!§r]§c Configurações Rapidas não funcionam corretamente em celulares com a Gui Clássica.
+warning.utilities_vein_miner:will_break=%1 Blocos Selecionados
+warning.utilities_vein_miner:breaking=Quebrado %1 Blocos
+warning.utilities_vein_miner:turned_off=Vein Miner foi desativado por inatividade
+
+
+
+pack.description=xVoid Axell não escreveu a descrição.
+pack.name=Utils Vein Miner v5.5 RP
